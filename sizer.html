@@ -8,27 +8,6 @@
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Sizer</title>
-    <script>
-      const onWidgetStatusChanged = (widgetStatus) => {
-        alert(
-          "onWidgetStatusChanged, new-status:" +
-            widgetStatus.status +
-            " ,userid:" +
-            widgetStatus.userid
-        );
-      };
-
-      const onRecommendationReady = (recommendationData) => {
-        alert(
-          "onRecommendationReady, recommendedSize=" +
-            recommendationData.recommendedSize
-        );
-      };
-
-      const sizerElement = document.getElementById("SIZER_SIZE_WIDGET");
-      sizerElement.onWidgetStatusChanged = onWidgetStatusChanged;
-      sizerElement.onRecommendationReady = onRecommendationReady;
-    </script>
   </head>
   <body>
     <div
@@ -36,6 +15,29 @@
       data-mode="widget"
       data-clientid="VANDEVELDE.CLiyda9gu5"
     ></div>
+
+    <script>
+        const onWidgetStatusChanged = (widgetStatus) => {
+            alert(
+                "onWidgetStatusChanged, new-status:" +
+                widgetStatus.status +
+                " ,userid:" +
+                widgetStatus.userid
+            );
+        };
+
+        const onRecommendationReady = (recommendationData) => {
+            alert(
+                "onRecommendationReady, recommendedSize=" +
+                recommendationData.recommendedSize
+            );
+        };
+
+        const sizerElement = document.getElementById("SIZER_SIZE_WIDGET");
+        sizerElement.onWidgetStatusChanged = onWidgetStatusChanged;
+        sizerElement.onRecommendationReady = onRecommendationReady;
+    </script>
+
     <script
       type="text/javascript"
       src="https://webscan.sizer.me/sizer.loader.js"
