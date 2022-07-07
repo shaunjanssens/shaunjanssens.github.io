@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sizer</title>
+    <script>
+      const onWidgetStatusChanged = (widgetStatus) => {
+        alert(
+          "onWidgetStatusChanged, new-status:" +
+            widgetStatus.status +
+            " ,userid:" +
+            widgetStatus.userid
+        );
+      };
+
+      const onRecommendationReady = (recommendationData) => {
+        alert(
+          "onRecommendationReady, recommendedSize=" +
+            recommendationData.recommendedSize
+        );
+      };
+
+      const sizerElement = document.getElementById("SIZER_SIZE_WIDGET");
+      sizerElement.onWidgetStatusChanged = onWidgetStatusChanged;
+      sizerElement.onRecommendationReady = onRecommendationReady;
+    </script>
+  </head>
+  <body>
+    <div
+      id="SIZER_SIZE_WIDGET"
+      data-mode="widget"
+      data-clientid="VANDEVELDE.CLiyda9gu5"
+    ></div>
+    <script
+      type="text/javascript"
+      src="https://webscan.sizer.me/sizer.loader.js"
+    ></script>
+  </body>
+</html>
